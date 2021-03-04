@@ -5,9 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import entities.*;
-
+import java.text.DateFormat;
+import java.util.Objects;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 public class DataCliente {
 
 	public LinkedList<Cliente> getAll(){
@@ -91,6 +98,16 @@ public class DataCliente {
 		return c;
 	}
 	
+	public Date convertDate(String date) {
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); //se formatea la fecha a yyyy-MM-dd
+		Date myDate = null; //crea un objeto myDate de tipo Date
+		try {
+			myDate = formatter.parse(date); //convierte la variable date ingresada por teclado en la fecha formateada y se la asigna al a variable myDate de tipo Date
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return myDate;
+	}	
 	public void add(Cliente c) {
 		PreparedStatement stmt=null;
 		ResultSet keyResultSet=null;

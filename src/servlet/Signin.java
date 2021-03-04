@@ -84,7 +84,7 @@ public class Signin extends HttpServlet {
 	}
 	
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/ClientForm.jsp").forward(request, response);
+		request.getRequestDispatcher("ClientForm.jsp").forward(request, response);
 	}
 	
 	private void listClients(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -168,7 +168,7 @@ public class Signin extends HttpServlet {
 		response.sendRedirect("list");
 	}
 	
-	private Date convertDate(String date) {
+	public Date convertDate(String date) {
 		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		Date myDate = null;
 		try {

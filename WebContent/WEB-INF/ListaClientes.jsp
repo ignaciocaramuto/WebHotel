@@ -18,7 +18,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<a href="<%=request.getContextPath()%>/new" class="btn btn-success">Agregar nuevo cliente</a>
+			<a href="ClienteForm.html" class="btn btn-success">Agregar nuevo cliente</a>
 			<h4>Clientes</h4>
 			<div class="col-12 col-sm col-lg-12">
 				<div class="table-responsive">
